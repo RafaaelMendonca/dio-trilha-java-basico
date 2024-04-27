@@ -1,8 +1,10 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ContaTerminal {
 
 	public static void main(String[] args) {
+		try {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Digite o número da conta!");
 		int numero = sc.nextInt();
@@ -21,9 +23,11 @@ public class ContaTerminal {
 				+ " já está disponível para saque.";
 		
 		System.out.println(informacaoDoCliente);
-		
 		sc.close();
-
+		}
+		catch(InputMismatchException e) {
+			System.out.println("O numero da conta e o saldo precisam ser numérico");
+		}
 	}
 
 }
